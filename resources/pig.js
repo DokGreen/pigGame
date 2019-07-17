@@ -14,9 +14,8 @@ document.getElementById('current-0').textContent = '0';
 document.getElementById('current-1').textContent = '0';
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
-    //add the value of dice to current score
+    //Generate random num for dice
     dice = Math.floor(Math.random() * 6) + 1;
-    document.querySelector('#current-' + activePlayer).textContent += dice;
     
     //bring the dice back
     var diceDOM = document.querySelector('.dice');
@@ -24,6 +23,19 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     
     //change dice img to reflect dice var
     diceDOM.src = 'resources/media/dice-' + dice + '.png';
+    
+    //if dice isnt 1 add to score
+    if(dice !== 1) {
+        roundScore += dice;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
+        
+        //else reset score to 0 and change the player
+    } else {
+        roundScore = 0;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
+        //if the player is 0 make it 1, if its anything else rewind to 0
+        activePlayer === 0? activePlayer = 1: activePlayer = 0;
+    }
    
     
     
