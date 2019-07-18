@@ -40,6 +40,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 document.querySelector('.btn-hold').addEventListener('click', function() {
     //on click add the roundScore to score
     scores[activePlayer] += roundScore;
+    document.getElementById('#name-' + activePlayer).textContent = 'Winner!';
     document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
     
     //reset the board
