@@ -31,19 +31,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         
         //else reset score to 0 and change the player
     } else {  
-        //if the player is 0 make it 1, if its anything else rewind to 0
-        activePlayer === 0? activePlayer = 1: activePlayer = 0;
-        //reset the scores to 0
-        roundScore = 0;
-        document.getElementById('current-0').textContent = '0';
-        document.getElementById('current-1').textContent = '0';
-        
-        //change the active styles
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-        
-        //final step to reset the scoreboard
-        document.querySelector('.dice').style.display = 'none';
+        nextPlayer();
     }
     
 });
@@ -65,12 +53,21 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
     } else {
-    //swap to the other player
-    activePlayer === 0? activePlayer = 1: activePlayer = 0;
-    
-    //change the active styles
-    document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
-    }
+    nextPlayer();
 })
 
+nextPlayer = function() {
+        //if the player is 0 make it 1, if its anything else rewind to 0
+        activePlayer === 0? activePlayer = 1: activePlayer = 0;
+        //reset the scores to 0
+        roundScore = 0;
+        document.getElementById('current-0').textContent = '0';
+        document.getElementById('current-1').textContent = '0';
+        
+        //change the active styles
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+        
+        //final step to reset the scoreboard
+        document.querySelector('.dice').style.display = 'none';
+}
