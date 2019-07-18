@@ -60,12 +60,16 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
     
+    //check to see if they wont
+    if(scores[activePlayer] === 30) {
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+    } else {
     //swap to the other player
     activePlayer === 0? activePlayer = 1: activePlayer = 0;
-
     
     //change the active styles
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
+    }
 })
 
