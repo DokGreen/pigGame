@@ -61,7 +61,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     document.getElementById('current-1').textContent = '0';
     
     //check to see if they wont
-    if(scores[activePlayer] === 30) {
+    if(scores[activePlayer] >= 30) {
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
     } else {
     //swap to the other player
