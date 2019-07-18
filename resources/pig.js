@@ -51,10 +51,12 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     
     //check to see if they wont
     if(scores[activePlayer] >= 30) {
+        document.getElementById('name-' + activePlayer).textContent = 'Winner!';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
     } else {
     nextPlayer();
+    }
 })
 
 nextPlayer = function() {
