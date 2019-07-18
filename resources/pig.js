@@ -63,6 +63,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     //check to see if they wont
     if(scores[activePlayer] >= 30) {
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
     } else {
     //swap to the other player
     activePlayer === 0? activePlayer = 1: activePlayer = 0;
