@@ -9,8 +9,12 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     
         //Generate random num for dice
         dice = Math.floor(Math.random() * 6) + 1;
+        //save a copy of the previous dice
         dice1 = dice;
-        console.log(dice, dice1)
+        //roll again now we can check to see if the user gets a double
+        dice = Math.floor(Math.random() * 6) + 1;
+        console.log('This is dice ' + dice);
+        console.log('This is dice one ' + dice1);
 
         //bring the dice back
         var diceDOM = document.querySelector('.dice');
@@ -19,12 +23,12 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         //change dice img to reflect dice var
         diceDOM.src = 'resources/media/dice-' + dice + '.png';
         //if dice isnt 1 add to score
-        if(dice !== 1) {
+        if(dice !== 1 && dice !== dice1) {
             roundScore += dice;
             document.getElementById('current-' + activePlayer).textContent = roundScore;
 
-            //else reset score to 0 and change the player
-        } else {  
+            //else swap the active players
+        }else {  
             nextPlayer();
         }
     }
@@ -44,7 +48,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('.dice').style.display = 'none';
 
         //check to see if they wont
-        if(scores[activePlayer] >= 30) {
+        if(scores[activePlayer] >= 100) {
             document.getElementById('name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
