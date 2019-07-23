@@ -1,4 +1,4 @@
-var scores, roundScore, activePlayer, dice, gamePlaying;
+var scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
 
 resetBoard();
 //dice = Math.floor(Math.random() * 6) + 1;
@@ -48,7 +48,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('.dice').style.display = 'none';
 
         //check to see if they wont
-        if(scores[activePlayer] >= 100) {
+        if(scores[activePlayer] >= winningScore) {
             document.getElementById('name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
@@ -83,9 +83,13 @@ function resetBoard() {
     roundScore = 0;
     activePlayer = 0;
     gamePlaying = true;
+    winningScore = document.getElementById('scoreTxt').value;
     
     //set the board
+    
     document.querySelector('.dice').style.display = 'none';
+    
+    //set it so when resetting, the scoreTxt value = nothing
 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
