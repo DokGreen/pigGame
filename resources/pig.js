@@ -9,6 +9,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     
         //Generate random num for dice
         dice = Math.floor(Math.random() * 6) + 1;
+        dice1 = dice;
+        console.log(dice, dice1)
 
         //bring the dice back
         var diceDOM = document.querySelector('.dice');
@@ -16,7 +18,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
         //change dice img to reflect dice var
         diceDOM.src = 'resources/media/dice-' + dice + '.png';
-
         //if dice isnt 1 add to score
         if(dice !== 1) {
             roundScore += dice;
