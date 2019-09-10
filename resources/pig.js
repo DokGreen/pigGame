@@ -1,3 +1,9 @@
+window.onload = function() {
+    alert(
+        "Input a score then hit new game \nIf you land on 0 or get a double your turn ends \nFirst person to the score wins"
+    );
+};
+
 var scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
 
 resetBoard();
