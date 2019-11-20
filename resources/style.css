@@ -140,6 +140,7 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-help {top: 530px;}
 
 .dice {
     position: absolute;
@@ -164,3 +165,45 @@ i {
     text-align: center;
     height: 40px;
 }
+
+.popUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    height: 30vw;
+    width: 30vw;
+    padding: 0.5vw;
+    font-size: 2vw;
+    box-shadow: 0 0 2vw #000;
+    /*scale 0 is a fancy display none*/
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    color: #fff;
+    background-color: #EB4D4D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .popUp h3 {
+      margin-bottom: 1vw;
+  }
+
+  .btnClose {
+      font-size: 6vw;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  .btnClose:active {
+      position: relative;
+      top: 0.2vw;
+      left: -0.1vw;
+  }
+
+  .pActive {
+    transform: translate(-50%, -50%) scale(1);
+  }

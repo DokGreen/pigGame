@@ -1,10 +1,24 @@
+let scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
+const popUp = document.querySelector('.popUp');
+const close = document.querySelector('.btnClose');
+const help = document.querySelector('.btn-help');
+
 window.onload = function() {
-    alert(
-        "Input a score then hit new game \nIf you land on 0 or get a double your turn ends \nFirst person to the score wins"
-    );
+    popUp.classList.add('pActive');
+    console.log(popUp)
 };
 
-var scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
+document.addEventListener('click', () => {
+    if(event.target.classList.contains('btn-help')){
+        popUp.classList.add('pActive');
+    } else if(event.target.classList.contains('btnClose')) {
+        popUp.classList.remove('pActive');
+    } else {
+        popUp.classList.remove('pActive');
+    }
+})
+
+console.log
 
 resetBoard();
 //dice = Math.floor(Math.random() * 6) + 1;

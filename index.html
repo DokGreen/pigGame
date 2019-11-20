@@ -32,13 +32,23 @@
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-help"><i class="ion-ios-help"></i>Help</button>
             <img src="resources/media/dice-5.png" alt="Dice" class="dice">
+
             
             <button id="score" class="btn-hold" type="text" placeholder="100">Score
                 <input id="scoreTxt"></input>
             </button>
-            
+
         </div>
+
+        <!--POPUP-->
+        <div class="popUp">
+            <h3>Instructions</h3>
+            <p>By default the score is set to 0<br>input a new score then hit new game to change this<br>If you land on 0 or get a double your turn ends<br>First person to the input score wins</p>    
+            <p class="btnClose">&times;</p>
+        </div>
+
         
         <script src="resources/pig.js"></script>
     </body>
